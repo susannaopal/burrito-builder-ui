@@ -5,7 +5,6 @@ import Orders from '../../components/Orders/Orders';
 import OrderForm from '../../components/OrderForm/OrderForm';
 
 class App extends Component {
-  // removing props from the constructor since not usually there (if an issue later then can bring back)
   constructor() {
     super();
     this.state = {
@@ -33,6 +32,7 @@ class App extends Component {
           <OrderForm />
         </header>
         <Orders orders={this.state.orders}/>
+        {!this.state.orders.length && <p>No orders yet!</p>}
       </main>
     );
   }

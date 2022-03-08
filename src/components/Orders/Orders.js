@@ -25,7 +25,7 @@ import Card from '../../components/Card/Card';
 // }
 
 const Orders = ({orders}) => {
-    const orderEls = orders.map((order, index) => {
+    const orderEls = orders.map((order) => {
       return (
         <Card 
           id={order.id}
@@ -38,6 +38,7 @@ const Orders = ({orders}) => {
   return (
     <div className='order'>
       {orderEls}
+      {/* {orderEls.length ? orderEls : <p>No orders yet!</p>} */}
     </div>
   )
 }
