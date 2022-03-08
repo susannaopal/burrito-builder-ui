@@ -26,16 +26,25 @@ class OrderForm extends Component {
     if(this.state.name === ''  || this.state.ingredients.length === 0) {
       this.setState({showError: true})
     } else {
-    const newName = {
-      id: Date.now(),
-      ...this.state
-    }
-    this.props.addName(newName)
-    const newIngredient = {
-      ...this.state
-    }
-    this.props.addIngredient(newIngredient)
-    this.clearInputs();
+      const newName = {
+        id: Date.now(),
+        ...this.state
+      }
+      const newOrder = {
+        ...this.state
+      }
+      this.props.addOrder(newName, newOrder)
+    // const newName = {
+    //   id: Date.now(),
+    //   ...this.state
+    // }
+    // this.props.addName(newName)
+    // const newIngredient = {
+    //   ...this.state
+    // }
+    // this.props.addIngredient(newIngredient)
+    // this.clearInputs();
+    
     }
   }
 

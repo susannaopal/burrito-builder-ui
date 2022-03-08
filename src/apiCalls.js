@@ -4,12 +4,12 @@ export const getOrders = () => {
 }
 
 
-export const postOrder = (newName, newIngredient) => {
+export const postOrder = (newFoodOrder) => {
     return fetch('http://localhost:3001/api/v1/orders', {
       method: 'POST',
       body: JSON.stringify({
-        name: newName.name,
-        ingredients: newIngredient.ingredient
+        name: newFoodOrder.name,
+        ingredients: newFoodOrder.ingredients
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -20,4 +20,3 @@ export const postOrder = (newName, newIngredient) => {
     .catch(error => console.log(error))
 }
 
-// {name: <String>, ingredients: <Array of Strings>}
