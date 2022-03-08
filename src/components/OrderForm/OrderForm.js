@@ -7,29 +7,37 @@ class OrderForm extends Component {
     // this.props = props;
     this.state = {
       name: '',
-      ingredients: []
+      ingredients: [],
+      showError: false
     };
   }
 
   handleNameChange = (event) => {
-    // console.log("is my name here?", event.target.name)
     this.setState({ [event.target.name]: event.target.value})
     
   }
 
   handleSubmit = e => {
     e.preventDefault();
+    if(this.state.name === '') {
+      this.setState({showError: true})
+    } else {
     const newName = {
       id: Date.now(),
       ...this.state
     }
     this.props.addName(newName)
-    // this.clearInputs();
+    this.clearInputs();
+    }
   }
 
-  // clearInputs = () => {
-  //   this.setState({name: '', ingredients: []});
-  // }
+  clearInputs = () => {
+    this.setState({
+      name: '', 
+    ingredients: [],
+    showError: false
+  });
+  }
 
   render() {
     const possibleIngredients = ['beans', 'steak', 'carnitas', 'sofritas', 'lettuce', 'queso fresco', 'pico de gallo', 'hot sauce', 'guacamole', 'jalapenos', 'cilantro', 'sour cream'];
@@ -58,6 +66,7 @@ class OrderForm extends Component {
         <button onClick={e => this.handleSubmit(e)}>
           Submit Order
         </button>
+        {this.state.showError && <p>Please make sure the form is filled out with both name and an ingredient.</p>}
       </form>
     )
   }

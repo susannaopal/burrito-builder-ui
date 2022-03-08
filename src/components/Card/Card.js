@@ -4,7 +4,7 @@ import './Card.css'
 const Card = ({id, name, ingredients}) => {
   return (
    <div className="card">
-     <p>{id}</p>
+     {/* <p>{id}</p> */}
       <h3>{name}</h3>
       <ul className="ingredient-list">
         {ingredients.map(ingredient => 
