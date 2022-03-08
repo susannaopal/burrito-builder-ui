@@ -8,13 +8,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      orders: [
-        // {
-        //   id: 1,
-        //   name: 'Pat',
-        //   ingredients: ['beans', 'lettuce', 'carnitas', 'queso fresco', 'jalapeno']
-        // }
-      ]
+      orders: []
     }
   }
 

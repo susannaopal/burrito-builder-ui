@@ -1,4 +1,5 @@
 import React from 'react';
+import './Card.css'
 
 const Card = ({id, name, ingredients}) => {
   return (
@@ -6,8 +7,10 @@ const Card = ({id, name, ingredients}) => {
      <p>{id}</p>
       <h3>{name}</h3>
       <ul className="ingredient-list">
-        {ingredients.map(ingredient => {
-        return <li>{ingredient}</li>})}
+        {ingredients.map(ingredient => 
+        {
+        return <li>{ingredient}</li>}
+        )}
         </ul>
       </div>
   )
