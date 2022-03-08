@@ -15,7 +15,7 @@ const Card = ({id, name, ingredients}) => {
 
 export default Card;
 
-//error throwing because the list wants a unique key
+//error throwing because the list wants a unique key ?? hannah said for right now not an issue
 //index.js:1 Warning: Each child in a list should have a unique "key" prop.
 
 // Check the render method of `Card`. See https://fb.me/react-warning-keys for more information.

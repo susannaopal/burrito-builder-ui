@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-// import {getOrders} from '../../apiCalls';
+import {getOrders} from '../../apiCalls';
 import Orders from '../../components/Orders/Orders';
 import OrderForm from '../../components/OrderForm/OrderForm';
 
@@ -9,20 +9,20 @@ class App extends Component {
     super();
     this.state = {
       orders: [
-        {
-          id: 1,
-          name: 'Pat',
-          ingredients: ['beans', 'lettuce', 'carnitas', 'queso fresco', 'jalapeno']
-        }
+        // {
+        //   id: 1,
+        //   name: 'Pat',
+        //   ingredients: ['beans', 'lettuce', 'carnitas', 'queso fresco', 'jalapeno']
+        // }
       ]
     }
   }
 
-  // componentDidMount() {
-  //   getOrders()
-  //   .then(data => this.setState({data => orders: data.orders}))
-  //   .catch(err => console.error('Error fetching:', err));
-  // }
+  componentDidMount() {
+    getOrders()
+    .then(data => this.setState({orders: data.orders}))
+    .catch(err => console.error('Error fetching:', err));
+  }
 
   render() {
     return (
