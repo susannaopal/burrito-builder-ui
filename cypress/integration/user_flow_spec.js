@@ -31,8 +31,24 @@ describe('User Flow View', () => {
   it('should see a form to make a burrito order with the user\'s name', () => {
     cy.get('form')
       .should('be.visible')
+  });
 
-  })
+  it('should see a card with an order from Pat', () => {
+    cy.get(':nth-child(1) > .card')
+      .get(':nth-child(1) > .card > h3')
+      .contains('Pat')
+      .get(':nth-child(1) > .card > .ingredient-list > :nth-child(1)')
+      .contains('beans')
+      .get(':nth-child(1) > .card > .ingredient-list > :nth-child(2)')
+      .contains('lettuce')
+      .get(':nth-child(1) > .card > .ingredient-list > :nth-child(3)')
+      .contains('carnitas')
+      .get(':nth-child(1) > .card > .ingredient-list > :nth-child(4)')
+      .contains('queso fresco')
+      .get(':nth-child(1) > .card > .ingredient-list > :nth-child(5)')
+      .contains('jalapeno')
+      .should('be.visible')
+  });
 
   it('should see an input for the user\'s name', () => {
     cy.get('form')
@@ -89,8 +105,6 @@ describe('User Flow View', () => {
       .get(':nth-child(21) > .card > .ingredient-list > :nth-child(2)')
       .contains('lettuce')
       .should('be.visible')
-
-
   })
   
 });
