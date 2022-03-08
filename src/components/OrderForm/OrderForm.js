@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 
 class OrderForm extends Component {
-  //removed props from constructor -see if need?, if so may need in super
   constructor() {
     super();
-    // this.props = props;
     this.state = {
       name: '',
       ingredients: [],
@@ -34,15 +32,6 @@ class OrderForm extends Component {
         ...this.state
       }
       this.props.addOrder(newName, newOrder)
-    // const newName = {
-    //   id: Date.now(),
-    //   ...this.state
-    // }
-    // this.props.addName(newName)
-    // const newIngredient = {
-    //   ...this.state
-    // }
-    // this.props.addIngredient(newIngredient)
     this.clearInputs();
     
     }

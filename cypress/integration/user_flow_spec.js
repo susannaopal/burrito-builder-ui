@@ -94,7 +94,7 @@ describe('User Flow View', () => {
     cy.get('.App > :nth-child(2)')
       .get(':nth-child(1) > .card')
       .should('have.length', 1)
-  })
+  });
 
   it('should see a posted order by Mary Cat', () => {
     cy.get(':nth-child(21) > .card')
@@ -105,12 +105,11 @@ describe('User Flow View', () => {
       .get(':nth-child(21) > .card > .ingredient-list > :nth-child(2)')
       .contains('lettuce')
       .should('be.visible')
-  })
+  });
   
 });
 
 
 
 
-// Write tests for the form and overall app user flows. Be sure to intercept the network requests.
 

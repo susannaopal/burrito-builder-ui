@@ -19,17 +19,8 @@ class App extends Component {
     .catch(err => console.error('Error fetching:', err));
   }
 
-  // addName = (newName) => {
-  //   this.setState({ orders: [...this.state.orders, newName ]})
-  // }
-
-  // addIngredient = (newIngredient) => {
-  //   this.setState({ orders: [...this.state.orders, newIngredient ]})
-  // }
-
   addOrder = (newFoodOrder) => {
   this.setState({ orders: [...this.state.orders, newFoodOrder]})
-  // this.setState({ orders: [...this.state.orders, newIngredient ]})
   postOrder(newFoodOrder)
   }
 
@@ -39,7 +30,6 @@ class App extends Component {
         <header>
           <h1>Burrito Builder</h1>
           <OrderForm addOrder={this.addOrder} />
-          {/* <OrderForm addName={this.addName} addIngredient={this.addIngredient}/> */}
         </header>
         <Orders orders={this.state.orders} />
         {!this.state.orders.length && <p>No orders yet!</p>}
