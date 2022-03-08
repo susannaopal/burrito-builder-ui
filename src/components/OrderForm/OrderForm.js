@@ -43,7 +43,7 @@ class OrderForm extends Component {
     //   ...this.state
     // }
     // this.props.addIngredient(newIngredient)
-    // this.clearInputs();
+    this.clearInputs();
     
     }
   }
