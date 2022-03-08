@@ -23,7 +23,7 @@ class OrderForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    if(this.state.name === '') {
+    if(this.state.name === ''  || this.state.ingredients.length === 0) {
       this.setState({showError: true})
     } else {
     const newName = {
